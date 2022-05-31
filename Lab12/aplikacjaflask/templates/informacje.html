@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;
+charset=UTF-8" />
+{% if tytul %}
+<title>{{tytul}}</title>
+{% else %}
+<title>Informacje</title>
+{% endif %}
+</head>
+<body>
+<h1>Witaj {{uzytkownik}} na stronie {{tytul}}!</h1>
+	<nav class="site-header sticky-top py-1">
+       <div class="container d-flex flex-column flex-md-row justify-content-between">
+           <a class="py-2 d-none d-md-inline-block" href="/">Strona glowna</a>
+           <a class="py-2 d-none d-md-inline-block" href="/about">O mnie</a>
+           <a class="py-2 d-none d-md-inline-block" href="/info">Informacje</a>
+       </div>
+    </nav>
+    <main role="main" class="container">
+        <div class="starter-template">
+            <h1>{{tytul}}</h1>
+            <p class="lead">{{tresc}}</p>
+            {% for post in posty %}
+            <div><p>{{ post.author.username }} napisal/a: <b>{{ post.body }}</b></p></div>
+            {% endfor %}
+            {% extends "baza.html" %}
+        </div>
+    </main>
+</body>
+</html> 
