@@ -21,12 +21,12 @@ def info():
     dane={'tytul':'Informacje ogolne','tresc':'Tu sa informacje ogolne'}
     posty=[
         {
-            'author':{'username':'Lukasz'},
-            'body': 'Jestem grafikiem'
+            'author':{'username':'Bartek'},
+            'body': 'Chcę być grafikiem'
         },
         {
-            'author':{'username':'Przemek'},
-            'body': 'Ja tez'
+            'author':{'username':'Karol'},
+            'body': 'Karol sieciowcem ale mu kierunku nie otworzą'
         }]
     return render_template('informacje.html',tytul=dane['tytul'],tresc=dane['tresc'],posty=posty)
 
